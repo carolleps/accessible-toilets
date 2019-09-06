@@ -57,32 +57,13 @@ function initMap(){
       if (entry.includes("wheelchair")) {
         console.log("Got one");
         accessibility.wheelchair = true;
-      } else if (entry.includes("pa system")) {
-        accessibility.paSystem = true;
-      } else if (entry.includes("hearing loop")) {
-        accessibility.hearingLoop = true;
-      } else if (entry.includes("level crossing")) {
-        accessibility.levelCrossing = true;
-      } else if (entry.includes("stairs")) {
-        accessibility.stairs = true;
-      } else if (entry.includes("tactile surfaces")) {
-        accessibility.tactileSurfaces = true;
-      } else if (entry.includes("car park")) {
-        accessibility.carPark = true;
       } else {
         // console.log("Could not understand accessibility string " + entry);
       }
       
 
 
-
     }
-
-    // for each line in  {
-    //   if "wheelchair accessible" in line:
-    //     accessibility.wheelchair = true
-
-    // }
 
     // creates marker with info from google api and model
     var marker = new google.maps.Marker({
