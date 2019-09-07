@@ -1,4 +1,4 @@
-# PitStop Spotter
+# PitStop
 ## Accessible toilets at stations and stops - <a href="http://stud20.ultimoweb.org/accessible-toilets/" target="_blank">Live version</a>
         
 
