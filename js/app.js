@@ -81,6 +81,8 @@ function initMap(){
       facility: facility,
       allfacilities: allfacilities
     });
+    
+    markers.push(marker);
 
     for (var i = 0; i < markers.length; i++) {
       if (markers[i].facility.accessToilet == true){
@@ -91,24 +93,25 @@ function initMap(){
       }
     }
 
-    markers.push(marker);
 
     marker.addListener('mouseover', function() {
-        if (marker.icon == defaultIcon) {
-          this.setIcon(hoverIcon);
-        }
-        else {
-          this.setIcon(wheelchairhoverIcon);
-        }
+        this.setOpacity(50);
+        // if (marker.icon == defaultIcon) {
+        //   this.setIcon(hoverIcon);
+        // }
+        // else {
+        //   this.setIcon(wheelchairhoverIcon);
+        // }
     });
 
     marker.addListener('mouseout', function() {
-        if (marker.icon == defaultIcon) {
-          this.setIcon(defaultIcon);
-        }
-        else {
-          this.setIcon(wheelchairIcon);
-        }
+        this.setOpacity(100);
+        // if (marker.icon == defaultIcon) {
+        //   this.setIcon(defaultIcon);
+        // }
+        // else {
+        //   this.setIcon(wheelchairIcon);
+        // }
     });
 
     marker.content = '<h3>' + marker.title + '</h3>'+
@@ -125,12 +128,12 @@ function initMap(){
       // Check to make sure the infowindow is not already opened on this marker.
       if (infowindow.marker != marker) {
         infowindow.setContent(marker.content);          
-        marker.setIcon(hoverIcon);
+        // marker.setIcon(hoverIcon);
         infowindow.marker = marker;
         // Make sure the marker property is cleared if the infowindow is closed.
         infowindow.addListener('closeclick', function() {
           infowindow.marker = null;
-          marker.setIcon(defaultIcon);
+          // marker.setIcon(defaultIcon);
         });
         infowindow.open(map, marker);
       }
